@@ -298,84 +298,80 @@ app.get('/menu', (req, res) => {
     const menu = [
         {
             "2023-04-03": {
-                "breakfast": {
-                    "main": "Scrambled eggs",
-                    "side": "Toast with butter",
-                    "beverage": "Orange juice"
-                },
-                "lunch": {
-                    "main": "Grilled chicken sandwich",
-                    "side": "Mixed green salad",
-                    "dessert": "Apple slices",
-                    "beverage": "Water"
-                },
-                "snack": "Yogurt with granola"
-            }
-        }, {
+              breakfast: {
+                main: "Scrambled eggs",
+                side: "Toast with butter",
+                beverage: "Orange juice"
+              },
+              lunch: {
+                main: "Grilled chicken sandwich",
+                side: "Mixed green salad",
+                dessert: "Apple slices",
+                beverage: "Water"
+              },
+              snack: "Yogurt with granola"
+            },
             "2023-04-04": {
-                "breakfast": {
-                    "main": "Pancakes with syru",
-                    "side": "Fresh fruit",
-                    "beverage": "Milk"
-                },
-                "lunch": {
-                    "main": "Spaghetti with marinara sauce",
-                    "side": "Garlic bread",
-                    "dessert": "Peach cup",
-                    "beverage": "Water"
-                },
-                "snack": "Cheese and crackers"
-            }
-        }, {
+              breakfast: {
+                main: "Pancakes with syrup",
+                side: "Fresh fruit",
+                beverage: "Milk"
+              },
+              lunch: {
+                main: "Spaghetti with marinara sauce",
+                side: "Garlic bread",
+                dessert: "Peach cup",
+                beverage: "Water"
+              },
+              snack: "Cheese and crackers"
+            },
             "2023-04-05": {
-                "breakfast": {
-                    "main": "Oatmeal with raisins",
-                    "side": "Toast with jam",
-                    "beverage": "Apple juice"
-                },
-                "lunch": {
-                    "main": "Turkey and cheese wrap",
-                    "side": "Carrot sticks",
-                    "dessert": "Chocolate chip cookie",
-                    "beverage": "Water"
-                },
-                "snack": "Veggie sticks with hummus"
-            }
-        }, {
+              breakfast: {
+                main: "Oatmeal with raisins",
+                side: "Toast with jam",
+                beverage: "Apple juice"
+              },
+              lunch: {
+                main: "Turkey and cheese wrap",
+                side: "Carrot sticks",
+                dessert: "Chocolate chip cookie",
+                beverage: "Water"
+              },
+              snack: "Veggie sticks with hummus"
+            },
             "2023-04-06": {
-                "breakfast": {
-                    "main": "Breakfast burrito",
-                    "side": "Fresh fruit",
-                    "beverage": "Milk"
-                },
-                "lunch": {
-                    "main": "Cheese pizza",
-                    "side": "Caesar salad",
-                    "dessert": "Orange slices",
-                    "beverage": "Water"
-                },
-                "snack": "Pretzels with mustard"
-            }
-        }, {
+              breakfast: {
+                main: "Breakfast burrito",
+                side: "Fresh fruit",
+                beverage: "Milk"
+              },
+              lunch: {
+                main: "Cheese pizza",
+                side: "Caesar salad",
+                dessert: "Orange slices",
+                beverage: "Water"
+              },
+              snack: "Pretzels with mustard"
+            },
             "2023-04-07": {
-                "breakfast": {
-                    "main": "Cereal with milk",
-                    "side": "Banana",
-                    "beverage": "Orange juice"
-                },
-                "lunch": {
-                    "main": "Fish sticks",
-                    "side": "Steamed mixed vegetables",
-                    "dessert": "Apple slices",
-                    "beverage": "Water"
-                },
-                "snack": "Popcorn"
+              breakfast: {
+                main: "Cereal with milk",
+                side: "Banana",
+                beverage: "Orange juice"
+              },
+              lunch: {
+                main: "Fish sticks",
+                side: "Steamed mixed vegetables",
+                dessert: "Apple slices",
+                beverage: "Water"
+              },
+              snack: "Popcorn"
             }
-        }        
+          }        
       ];
       res.json(menu);
 });
   
-app.listen(port, () => {
+app.listen(port, '192.168.2.132', () => {
     console.log(`Server running on port ${port}`);
 });
