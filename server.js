@@ -61,235 +61,427 @@ app.get('/appointments', (req, res) => {
 
   // Mock data for the substitution plans
 app.get('/plan', (req, res) => {
-    const plans = [
+    const plans = [{
+            id: "1",
+            class: "5A",
+            date: "2023-04-03",
+            startTime: "08:00",
+            endTime: "09:30",
+            subject: "Mathematics",
+            teacher: "Ms. Jones",
+            room: {
+                number: "101",
+                name: "Math Classroom"
+            },
+            info: "Chapter 7: Fractions"
+        },
         {
-            "2023-04-03": {
-                "classes": [{
-                        "class": 5,
-                        "courses": [{
-                                "courseNumber": 1,
-                                "course": "Mathematics",
-                                "teacher": "Mr. Brown",
-                                "startTime": "08:00",
-                                "endTime": "09:30",
-                                "room": {
-                                    "number": "101",
-                                    "name": "Math Room"
-                                }
-                            },
-                            {
-                                "courseNumber": 2,
-                                "course": "Science",
-                                "teacher": "Ms. Johnson",
-                                "startTime": "09:45",
-                                "endTime": "11:15",
-                                "room": {
-                                    "number": "102",
-                                    "name": "Science Lab"
-                                }
-                            },
-                            {
-                                "courseNumber": 3,
-                                "course": "English",
-                                "teacher": "Mr. Davis",
-                                "startTime": "11:30",
-                                "endTime": "13:00",
-                                "room": {
-                                    "number": "103",
-                                    "name": "English Room"
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "class": 6,
-                        "courses": [{
-                                "courseNumber": 1,
-                                "course": "Mathematics",
-                                "teacher": "Ms. Lee",
-                                "startTime": "08:00",
-                                "endTime": "09:30",
-                                "room": {
-                                    "number": "201",
-                                    "name": "Math Room"
-                                }
-                            },
-                            {
-                                "courseNumber": 2,
-                                "course": "Science",
-                                "teacher": "Mr. Wilson",
-                                "startTime": "09:45",
-                                "endTime": "11:15",
-                                "room": {
-                                    "number": "202",
-                                    "name": "Science Lab"
-                                }
-                            },
-                            {
-                                "courseNumber": 3,
-                                "course": "English",
-                                "teacher": "Ms. Brown",
-                                "startTime": "11:30",
-                                "endTime": "13:00",
-                                "room": {
-                                    "number": "203",
-                                    "name": "English Room"
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "class": 7,
-                        "courses": [{
-                                "courseNumber": 1,
-                                "course": "Mathematics",
-                                "teacher": "Mr. Chen",
-                                "startTime": "08:00",
-                                "endTime": "09:30",
-                                "room": {
-                                    "number": "301",
-                                    "name": "Math Room"
-                                }
-                            },
-                            {
-                                "courseNumber": 2,
-                                "course": "Science",
-                                "teacher": "Ms. Wilson",
-                                "startTime": "09:45",
-                                "endTime": "11:15",
-                                "room": {
-                                    "number": "302",
-                                    "name": "Science Lab"
-                                }
-                            },
-                            {
-                                "courseNumber": 3,
-                                "course": "English",
-                                "teacher": "Mr. Garcia",
-                                "startTime": "11:30",
-                                "endTime": "13:00",
-                                "room": {
-                                    "number": "303",
-                                    "name": "English Room"
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "class": 8,
-                        "courses": [{
-                                "courseNumber": 1,
-                                "course": "Mathematics",
-                                "teacher": "Ms. Kim",
-                                "startTime": "08:00",
-                                "endTime": "09:30",
-                                "room": {
-                                    "number": "401",
-                                    "name": "Math Room"
-                                }
-                            },
-                            {
-                                "courseNumber": 2,
-                                "course": "Science",
-                                "teacher": "Mr. Martinez",
-                                "startTime": "09:45",
-                                "endTime": "11:15",
-                                "room": {
-                                    "number": "402",
-                                    "name": "Science Lab"
-                                }
-                            },
-                            {
-                                "courseNumber": 3,
-                                "course": "English",
-                                "teacher": "Ms. Johnson",
-                                "startTime": "11:30",
-                                "endTime": "13:00",
-                                "room": {
-                                    "number": "403",
-                                    "name": "English Room"
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "class": 9,
-                        "courses": [{
-                                "courseNumber": 1,
-                                "course": "Mathematics",
-                                "teacher": "Mr. Rodriguez",
-                                "startTime": "08:00",
-                                "endTime": "09:30",
-                                "room": {
-                                    "number": "501",
-                                    "name": "Math Room"
-                                }
-                            },
-                            {
-                                "courseNumber": 2,
-                                "course": "Science",
-                                "teacher": "Ms. Kim",
-                                "startTime": "09:45",
-                                "endTime": "11:15",
-                                "room": {
-                                    "number": "502",
-                                    "name": "Science Lab"
-                                }
-                            },
-                            {
-                                "courseNumber": 3,
-                                "course": "English",
-                                "teacher": "Mr. Smith",
-                                "startTime": "11:30",
-                                "endTime": "13:00",
-                                "room": {
-                                    "number": "503",
-                                    "name": "English Room"
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "class": 10,
-                        "courses": [{
-                                "courseNumber": 1,
-                                "course": "Mathematics",
-                                "teacher": "Ms. Garcia",
-                                "startTime": "08:00",
-                                "endTime": "09:30",
-                                "room": {
-                                    "number": "601",
-                                    "name": "Math Room"
-                                }
-                            },
-                            {
-                                "courseNumber": 2,
-                                "course": "Science",
-                                "teacher": "Mr. Lee",
-                                "startTime": "09:45",
-                                "endTime": "11:15",
-                                "room": {
-                                    "number": "602",
-                                    "name": "Science Lab"
-                                }
-                            },
-                            {
-                                "courseNumber": 3,
-                                "course": "English",
-                                "teacher": "Ms. Rodriguez",
-                                "startTime": "11:30",
-                                "endTime": "13:00",
-                                "room": {
-                                    "number": "603",
-                                    "name": "English Room"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
+            id: "2",
+            class: "6A",
+            date: "2023-04-03",
+            startTime: "09:45",
+            endTime: "11:15",
+            subject: "English",
+            teacher: "Mr. Smith",
+            room: {
+                number: "102",
+                name: "English Classroom"
+            },
+            info: "Essay Writing"
+        },
+        {
+            id: "3",
+            class: "7A",
+            date: "2023-04-03",
+            startTime: "11:30",
+            endTime: "13:00",
+            subject: "Science",
+            teacher: "Ms. Patel",
+            room: {
+                number: "103",
+                name: "Science Classroom"
+            },
+            info: "Chemical Reactions"
+        },
+        {
+            id: "4",
+            class: "5A",
+            date: "2023-04-04",
+            startTime: "08:00",
+            endTime: "09:30",
+            subject: "Geography",
+            teacher: "Ms. Williams",
+            room: {
+                number: "104",
+                name: "Geography Classroom"
+            },
+            info: "Continents and Oceans"
+        },
+        {
+            id: "5",
+            class: "6A",
+            date: "2023-04-04",
+            startTime: "09:45",
+            endTime: "11:15",
+            subject: "History",
+            teacher: "Mr. Brown",
+            room: {
+                number: "105",
+                name: "History Classroom"
+            },
+            info: "World War II"
+        },
+        {
+            id: "6",
+            class: "7A",
+            date: "2023-04-04",
+            startTime: "11:30",
+            endTime: "13:00",
+            subject: "Art",
+            teacher: "Ms. Lee",
+            room: {
+                number: "106",
+                name: "Art Classroom"
+            },
+            info: "Painting Techniques"
+        },
+        {
+            id: "7",
+            class: "5A",
+            date: "2023-04-05",
+            startTime: "08:00",
+            endTime: "09:30",
+            subject: "Music",
+            teacher: "Ms. Jackson",
+            room: {
+                number: "107",
+                name: "Music Classroom"
+            },
+            info: "Piano Basics"
+        },
+        {
+            id: "8",
+            class: "6A",
+            date: "2023-04-05",
+            startTime: "09:45",
+            endTime: "11:15",
+            subject: "Physical Education",
+            teacher: "Mr. Garcia",
+            room: {
+                number: "108",
+                name: "Gymnasium"
+            },
+            info: "Basketball Practice"
+        },
+        {
+            id: "9",
+            class: "7A",
+            date: "2023-04-05",
+            startTime: "11:30",
+            endTime: "13:00",
+            subject: "Technology",
+            teacher: "Mr. Kim",
+            room: {
+                number: "109",
+                name: "Computer Lab"
+            },
+            info: "Introduction to Coding"
+        },
+        {
+            id: "10",
+            class: "5A",
+            date: "2023-04-06",
+            startTime: "08:00",
+            endTime: "09:30",
+            subject: "Social Studies",
+            teacher: "Ms. Rodriguez",
+            room: {
+                number: "110",
+                name: "Social Studies Classroom"
+            },
+            info: "The American Revolution"
+        },
+        {
+            id: "11",
+            class: "6A",
+            date: "2023-04-06",
+            startTime: "09:45",
+            endTime: "11:15",
+            subject: "Language",
+            teacher: "Ms. Chen",
+            room: {
+                number: "111",
+                name: "Language Classroom"
+            },
+            info: "Grammar Review"
+        },
+        {
+            id: "12",
+            class: "7A",
+            date: "2023-04-06",
+            startTime: "11:30",
+            endTime: "13:00",
+            subject: "Religion",
+            teacher: "Father Johnson",
+            room: {
+                number: "112",
+                name: "Chapel"
+            },
+            info: "The Bible and Christianity"
+        },
+        {
+            id: "13",
+            class: "5A",
+            date: "2023-04-07",
+            startTime: "08:00",
+            endTime: "09:30",
+            subject: "Mathematics",
+            teacher: "Mr. Davis",
+            room: {
+                number: "113",
+                name: "Math Classroom"
+            },
+            info: "Chapter 8: Decimals"
+        },
+        {
+            id: "14",
+            class: "6A",
+            date: "2023-04-07",
+            startTime: "09:45",
+            endTime: "11:15",
+            subject: "English",
+            teacher: "Ms. Clark",
+            room: {
+                number: "114",
+                name: "English Classroom"
+            },
+            info: "Poetry Analysis"
+        },
+        {
+            id: "15",
+            class: "7A",
+            date: "2023-04-07",
+            startTime: "11:30",
+            endTime: "13:00",
+            subject: "Science",
+            teacher: "Ms. Johnson",
+            room: {
+                number: "115",
+                name: "Science Classroom"
+            },
+            info: "Physics: Motion"
+        },
+        {
+            id: "16",
+            class: "5A",
+            date: "2023-04-08",
+            startTime: "08:00",
+            endTime: "09:30",
+            subject: "Physical Education",
+            teacher: "Mr. Thompson",
+            room: {
+                number: "108",
+                name: "Gymnasium"
+            },
+            info: "Soccer Practice"
+        },
+        {
+            id: "17",
+            class: "6A",
+            date: "2023-04-08",
+            startTime: "09:45",
+            endTime: "11:15",
+            subject: "Art",
+            teacher: "Ms. Kim",
+            room: {
+                number: "106",
+                name: "Art Classroom"
+            },
+            info: "Sculpting Techniques"
+        },
+        {
+            id: "18",
+            class: "7A",
+            date: "2023-04-08",
+            startTime: "11:30",
+            endTime: "13:00",
+            subject: "Music",
+            teacher: "Ms. Thompson",
+            room: {
+                number: "107",
+                name: "Music Classroom"
+            },
+            info: "Choir Practice"
+        },
+        {
+            id: "19",
+            class: "5A",
+            date: "2023-04-09",
+            startTime: "08:00",
+            endTime: "09:30",
+            subject: "History",
+            teacher: "Ms. Hernandez",
+            room: {
+                number: "105",
+                name: "History Classroom"
+            },
+            info: "Ancient Civilizations"
+        },
+        {
+            id: "20",
+            class: "6A",
+            date: "2023-04-09",
+            startTime: "09:45",
+            endTime: "11:15",
+            subject: "Mathematics",
+            teacher: "Ms. Kim",
+            room: {
+                number: "101",
+                name: "Math Classroom"
+            },
+            info: "Chapter 9: Ratios and Proportions"
+        },
+        {
+            id: "21",
+            class: "7A",
+            date: "2023-04-09",
+            startTime: "11:30",
+            endTime: "13:00",
+            subject: "Physical Education",
+            teacher: "Mr. Johnson",
+            room: {
+                number: "108",
+                name: "Gymnasium"
+            },
+            info: "Volleyball Practice"
+        },
+        {
+            id: "22",
+            class: "5A",
+            date: "2023-04-10",
+            startTime: "08:00",
+            endTime: "09:30",
+            subject: "Language",
+            teacher: "Ms. Patel",
+            room: {
+                number: "111",
+                name: "Language Classroom"
+            },
+            info: "Creative Writing"
+        },
+        {
+            id: "23",
+            class: "6A",
+            date: "2023-04-10",
+            startTime: "09:45",
+            endTime: "11:15",
+            subject: "Science",
+            teacher: "Mr. Davis",
+            room: {
+                number: "103",
+                name: "Science Classroom"
+            },
+            info: "Biology: Cells"
+        },
+        {
+            id: "24",
+            class: "7A",
+            date: "2023-04-10",
+            startTime: "11:30",
+            endTime: "13:00",
+            subject: "Religion",
+            teacher: "Father Hernandez",
+            room: {
+                number: "112",
+                name: "Chapel"
+            },
+            info: "The Ten Commandments"
+        },
+        {
+            id: "25",
+            class: "5A",
+            date: "2023-04-11",
+            startTime: "08:00",
+            endTime: "09:30",
+            subject: "Social Studies",
+            teacher: "Ms. Lee",
+            room: {
+                number: "110",
+                name: "Social Studies Classroom"
+            },
+            info: "The Civil Rights Movement"
+        },
+        {
+            id: "26",
+            class: "6A",
+            date: "2023-04-11",
+            startTime: "09:45",
+            endTime: "11:15",
+            subject: "English",
+            teacher: "Ms. Kim",
+            room: {
+                number: "102",
+                name: "English Classroom"
+            },
+            info: "Literary Devices"
+        },
+        {
+            id: "27",
+            class: "7A",
+            date: "2023-04-11",
+            startTime: "11:30",
+            endTime: "13:00",
+            subject: "Technology",
+            teacher: "Ms. Davis",
+            room: {
+                number: "109",
+                name: "Computer Lab"
+            },
+            info: "Web Design"
+        },
+        {
+            id: "28",
+            class: "5A",
+            date: "2023-04-12",
+            startTime: "08:00",
+            endTime: "09:30",
+            subject: "Science",
+            teacher: "Ms. Hernandez",
+            room: {
+                number: "103",
+                name: "Science Classroom"
+            },
+            info: "Chemistry: Elements and Compounds"
+        },
+        {
+            id: "29",
+            class: "6A",
+            date: "2023-04-12",
+            startTime: "09:45",
+            endTime: "11:15",
+            subject: "Mathematics",
+            teacher: "Mr. Thompson",
+            room: {
+                number: "101",
+                name: "Math Classroom"
+            },
+            info: "Chapter 10: Geometry"
+        },
+        {
+            id: "30",
+            class: "7A",
+            date: "2023-04-12",
+            startTime: "11:30",
+            endTime: "13:00",
+            subject: "Art",
+            teacher: "Ms. Jackson",
+            room: {
+                number: "106",
+                name: "Art Classroom"
+            },
+            info: "Drawing Techniques"
         }
-      ];
+    ];
     res.json(plans);
 });
 
