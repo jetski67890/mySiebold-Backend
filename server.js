@@ -564,6 +564,6 @@ app.get('/menu', (req, res) => {
       res.json(menu);
 });
   
-app.listen(port, '192.168.2.132', () => {
+app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
