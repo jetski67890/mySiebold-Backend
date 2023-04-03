@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> Contains a Node.js Express server that provides mock data for the mySiebold-twin app. The server serves an API for appointments, substitution plans of different classes, and the menu plan of a school. With this server, you can quickly test the application without relying on actual data.
+> Contains a Node.js Express server that provides mock data for the [mySiebold-twin app](https://github.com/jetski67890/mySiebold-Twin/). The server serves an API for appointments, substitution plans of different classes, and the menu plan of a school. With this server, you can quickly test the application without relying on actual data.
 
 
 ### [Demo deployed on render.com](https://mysiebold-backend.onrender.com/)
