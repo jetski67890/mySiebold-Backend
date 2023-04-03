@@ -7,6 +7,11 @@ const port = process.env.SERVER_PORT || 5000;
 app.use(express.json());
 
 // Routes
+// display all of the links to the different routes
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+}); 
+
 // Mock data for the appointments
 app.get('/appointments', (req, res) => {
     const appointments = [{
